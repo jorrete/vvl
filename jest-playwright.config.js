@@ -5,6 +5,6 @@ module.exports = {
     browsers: [
         'chromium',
         'firefox',
-        'webkit',
+        // 'webkit',
     ],
 };
