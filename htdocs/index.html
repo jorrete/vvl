@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vvl</title>
+    <link rel="stylesheet" href=".index.css" type="text/css" charset="utf-8">
+    <script type="text/javascript" charset="utf-8" src=".index.js"></script>
+</head>
+<body>
+    <div id="options">
+        <span>options</span>
+        <input type="checkbox" id="options" name="options">
+        <form id="form" name="vvl" autocomplete="on">
+            <div>
+                <span class="option">extraChunk</span>
+                <input type="number" name="extraChunk" value="10" size="5">
+            </div>
+            <div>
+                <span class="option">debug</span>
+                <input type="checkbox" name="debug">
+            </div>
+            <div>
+                <span class="option">reverse</span>
+                <input type="checkbox" name="reverse">
+            </div>
+            <div>
+                <span class="option">dynamic</span>
+                <input type="checkbox" name="dynamic">
+            </div>
+            <div>
+                <span class="option">axis</span>
+                <label>
+                    <span>x</span>
+                    <input type="radio" name="axis" value="x">
+                </label>
+                <label>
+                    <span>y</span>
+                    <input type="radio" name="axis" value="y" checked>
+                </label>
+            </div>
+            <div>
+                <span class="option">mode</span>
+                <label>
+                    <span>recreate</span>
+                    <input type="radio" name="mode" value="recreate" checked>
+                </label>
+                <label>
+                    <span>cache</span>
+                    <input type="radio" name="mode" value="cache">
+                </label>
+                <label>
+                    <span>recycle</span>
+                    <input type="radio" name="mode" value="recycle">
+                </label>
+                <label>
+                    <span>declarative</span>
+                    <input type="radio" name="mode" value="declarative">
+                </label>
+            </div>
+            <hr>
+            <div>
+                <span class="option">position</span>
+                <input type="number" name="position" size="5">
+            </div>
+            <div>
+                <span class="option">index</span>
+                <input type="number" name="index" size="5">
+            </div>
+            <div>
+                <span class="option">length</span>
+                <input type="number" name="length" value="100" size="5">
+            </div>
+            <div>
+                <span class="option">imgSize</span>
+                <input type="number" name="imgSize" value="100" size="5">
+            </div>
+            <div>
+                <span class="option">lazy</span>
+                <input type="number" name="lazy" value="0" size="5">
+            </div>
+            <hr>
+            <div id="buttons">
+                <button type="submit">vvl</button>
+            </div>
+        </form>
+    </div>
+    <div id="content">
+        <ul id="list"></ul>
+    </div>
+    <div id="controls">
+        <button id="reset" type="button">Reset</button>
+        <button id="update" type="button">Update</button>
+        <label>
+            <span>smooth</span>
+            <input id="smooth" type="checkbox">
+        </label>
+        <button id="init" type="button">init</button>
+        <button id="end" type="button">end</button>
+        <button id="prev" type="button">prev</button>
+        <button id="forward" type="button">forward</button>
+        <input id="index" type="number" value="0" size="5">
+    </div>
+</body>
+</html>

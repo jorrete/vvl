@@ -1,0 +1,39 @@
+{
+    "name": "vvl",
+    "version": "0.1.0",
+    "files": [],
+    "dependencies": {},
+    "devDependencies": {
+        "jest": "^26.1.0",
+        "jest-playwright-preset": "^1.2.1",
+        "playwright": "^1.2.0",
+        "postcss": "^7.0.32",
+        "postcss-cli": "^7.1.1",
+        "postcss-import": "^12.0.1",
+        "rollup": "^2.21.0",
+        "serve": "^11.3.2"
+    },
+    "jest": {
+        "preset": "jest-playwright-preset"
+    },
+    "eslintConfig": {
+        "extends": [
+            "plugin:jest-playwright/recommended"
+        ],
+        "plugins": [
+            "jest"
+        ],
+        "env": {
+            "jest": true
+        }
+    },
+    "scripts": {
+        "build_css": "postcss -c postcss.config.js htdocs/index.css -o htdocs/.index.css",
+        "build_js": "rollup -c rollup.config.js",
+        "watch_css": "postcss -c postcss.config.js htdocs/index.css -o htdocs/.index.css -w",
+        "watch_js": "rollup -c rollup.config.js -w",
+        "build": "npm run build_css && npm run build_js",
+        "dev": "npm run watch_css & npm run watch_js & serve htdocs",
+        "test": "npm run build_js && npm run build_css && env PAGE_URL=$PWD/htdocs/index.html jest"
+    }
+}

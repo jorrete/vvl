@@ -1,0 +1,107 @@
+@import '../index.css';
+
+html, body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+input[name=options]:not(:checked) + form {
+    display: none;
+}
+
+#options * {
+    vertical-align: middle;
+}
+
+#controls,
+#options,
+#options form {
+    background-color: lightgray;
+    padding: 0.5rem;
+    z-index: 1;
+}
+
+#options > div {
+    padding: 0.5rem;
+}
+
+#options form {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#content {
+    flex: 1 1;
+    overflow: hidden;
+}
+
+.option {
+    font-weight: bolder;
+}
+
+.option:after {
+    content: ':'
+}
+
+ul {
+    -webkit-overflow-scrolling: touch;
+    margin: 0;
+}
+
+ul[vvl] > li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+ul[vvl=y] > li > :first-child {
+    flex: auto;
+}
+
+/* if not width increases with the growing number */
+ul[vvl=x] > li > :first-child {
+    width: 100px;
+    text-align: center;
+}
+
+ul[vvl=y] > li[vvl-size="50"] {
+    height: 50px;
+}
+
+ul[vvl=y] > li[vvl-size="100"] {
+    height: 100px;
+}
+
+ul[vvl=y] > li[vvl-size="150"] {
+    height: 150px;
+}
+
+
+ul[vvl=x] > li {
+    flex-direction: column;
+}
+
+ul[vvl=x] > li[vvl-size="50"] {
+    width: 50px;
+}
+
+ul[vvl=x] > li[vvl-size="100"] {
+    width: 100px;
+}
+
+ul[vvl=x] > li[vvl-size="150"] {
+    width: 150px;
+}

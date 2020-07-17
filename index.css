@@ -1,0 +1,61 @@
+[vvl] {
+    padding: 0 !important;
+    width: 100% !important;
+    --vvl-init: 0px;
+    --vvl-end: 0px;
+}
+
+[vvl=x] {
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+}
+
+[vvl=y] {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100% !important;
+}
+
+[vvl]::before,
+[vvl]::after {
+    content: '' !important;
+    display: block !important;
+    
+}
+
+[vvl=x]::before {
+    flex: none;
+    width: var(--vvl-init);
+}
+
+[vvl=y]::before {
+    width: 100%;
+    height: var(--vvl-init);
+}
+
+[vvl=x]::after {
+    width: var(--vvl-end);
+    flex: none;
+}
+
+[vvl=y]::after {
+    height: var(--vvl-end);
+    width: 100%;
+}
+
+[vvl] > * {
+    list-style: none !important;
+    margin: 0 !important;
+}
+
+[vvl=x] > * {
+    flex: none;
+    overflow: hidden !important;
+}
+
+[vvl=x] > [vvl-prerender] {
+    position: absolute;
+    visibility: hidden;
+    z-index: -1;
+}
