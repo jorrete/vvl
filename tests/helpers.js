@@ -320,7 +320,7 @@ function testReset(options) {
             await testOrderIntegrity(options);
             const initialLastChild = (await getChildrenPos()).slice(-1)[0];
             await expect(initialLastChild.index === (options.reverse? 0: options.length - 1)).toBe(true);
-
+            await wait(100);
             await fireContent('reset');
             await testOrderIntegrity(options);
             await fireControl('scrollEnd');
@@ -343,8 +343,8 @@ function test(options) {
     testControls(options);
     testInitialPos(options);
     testMode(options);
-    testUpdate(options);
     testReset(options);
+    testUpdate(options);
 }
 
 module.exports = {
